@@ -69,6 +69,15 @@ All binaries downloaded from [static.rust-lang.org](https://static.rust-lang.org
 - [scripts/Verify.ps1](scripts/Verify.ps1) — standard-user verification (`rustc`, `cl`/`link`, hello-world msvc/gnu, long-paths)
 - [config/cargo-config.example.toml](config/cargo-config.example.toml) — proxy/CA/offline/vendor cargo config template
 
+## Offline vendor pack (Citrix / no-internet boxes)
+
+Release [`win10-devtools-v1`](https://github.com/toin-m/rust-windows-toolchain/releases/tag/win10-devtools-v1)
+mirrors every redistributable tool (ninja, nasm, 7zr, sccache,
+cargo-binstall, vc_redist, cmake, PortableGit, rust-analyzer.vsix,
+WinLibs MinGW UCRT, VSCodium) — each with a detail page + official source
+link under [`vendor/`](vendor/). Microsoft-only items (Build Tools, SDK,
+`cl.exe`/`link.exe`) are docs-only by license — see [TOOLS.md](TOOLS.md).
+
 ### Updating
 
 This repository is updated with each new Rust stable release. Watch the repository for notifications.

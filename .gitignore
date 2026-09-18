@@ -5,7 +5,9 @@
 *.msi
 *.vsix
 rust-*-windows-*/
-vendor/
+# cargo `vendor/` output (only if this repo ever gains a cargo project;
+# the vendor/*.md docs below MUST stay tracked, so this stays commented)
+# vendor/
 target/
 .vs/
 # local cargo/rustup homes if ever created here
