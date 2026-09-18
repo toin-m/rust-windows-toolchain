@@ -1,0 +1,13 @@
+# Rust toolchain binaries live in GitHub Releases, not in git
+*.tar.xz
+*.tar.gz
+*.exe
+*.msi
+*.vsix
+rust-*-windows-*/
+vendor/
+target/
+.vs/
+# local cargo/rustup homes if ever created here
+.cargo/
+.rustup/

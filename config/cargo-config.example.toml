@@ -1,0 +1,29 @@
+# Copy to %CARGO_HOME%\config.toml (persistent drive, e.g. U:\rust\.cargo\config.toml)
+# and edit proxy / CA / vendor paths. See CITRIX-Windows10.md §4.
+# Ref: https://doc.rust-lang.org/cargo/reference/config.html
+
+[http]
+# Corporate proxy (same as HTTP_PROXY/HTTPS_PROXY). Comment out if direct.
+proxy = "http://proxy.corp:8080"
+# Corp TLS-inspection bundle (PEM). Ask PKI team; NOT the Windows cert store.
+cainfo = "U:\\certs\\corp-bundle.pem"
+proxy-cainfo = "U:\\certs\\corp-bundle.pem"
+timeout = 60
+# Only with security approval, when CRL/OCSP is blocked behind the proxy:
+# check-revoke = false
+
+[net]
+# Set true on fully offline VDI to fail fast instead of hanging on network.
+offline = false
+# retry = 3
+
+[build]
+# Keep huge target/ dirs off roaming profiles. Env var CARGO_TARGET_DIR wins.
+target-dir = "C:/Temp/USERNAME/target"
+
+# --- Offline vendor (uncomment after `cargo vendor vendor` on a connected host) ---
+# Ref: https://doc.rust-lang.org/cargo/reference/source-replacement.html
+# [source.crates-io]
+# replace-with = "vendored-sources"
+# [source.vendored-sources]
+# directory = "vendor"
