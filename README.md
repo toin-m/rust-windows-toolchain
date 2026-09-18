@@ -54,7 +54,15 @@ clippy-1.98.1-x86_64-pc-windows-msvc.tar.xz: <verify from rust-lang.org>
 
 All binaries downloaded from [static.rust-lang.org](https://static.rust-lang.org/dist/).
 
-Official release channel: [channel-rust-stable.toml](https://static.rust-lang.org/dist/channel-rust-stable.toml)
+
+## Prerequisites for Development
+
+See [PREREQUISITES.md](PREREQUISITES.md) for complete setup including:
+ - Visual Studio Build Tools (free, provides `cl.exe` + `link.exe`)
+ - Windows SDK
+ - Git, vcpkg for C/C++ dependencies
+ - Offline installation instructions
+ - GNU toolchain alternative (no VS needed)
 
 ### Updating
 
